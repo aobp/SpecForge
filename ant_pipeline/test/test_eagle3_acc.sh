@@ -55,12 +55,12 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun \
 # deepseek-v2-lite-chat
 torchrun \
     --standalone \
-    --nproc_per_node 8 \
+    --nproc_per_node 4 \
     ./scripts/test_eagle3_online.py \
     --target-model-path /mnt/modelops/487922/deepseek-ai__DeepSeek-V2-Lite-Chat \
     --draft-model-config /mnt/modelops/487922/ant_dev/SpecForge/configs/deepseek-v2-lite-eagle3.json \
     --eval-data-path /mnt/modelops/train/eagle/data/online_data/alpaca/online_alpaca.json \
     --draft-model-path /mnt/modelops/train/eagle3/baseline_ultrachat_sft_train_only/weight/Deepseek_V2_Lite_Chat_eagle3_16gpus_Epoch10 \
-    --batch-size 1 \
+    --batch-size 8 \
     --max-length 2048 \
     --chat-template deepseek
